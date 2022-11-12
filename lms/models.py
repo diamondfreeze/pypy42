@@ -1,4 +1,4 @@
-from django.db.models import (Model, CharField, CASCADE, ForeignKey, Discipline)
+from django.db.models import (Model, CharField, CASCADE, ForeignKey, Discipline, Group)
 
 
 
@@ -30,4 +30,12 @@ class Discipline(Model):
 
     def __str__(self):
         return "discipline "+self.dis_name
+
+
+class Group(Model):
+    group_name = CharField(max_length=20)
+    curator = ForeignKey(Curator,
+                         on_delete=CASCADE)
+
+
 
