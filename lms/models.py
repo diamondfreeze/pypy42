@@ -1,8 +1,4 @@
-from django.db.models import (Model,
-                              CharField,
-                              CASCADE,
-                              ForeignKey,
-                              )
+from django.db.models import (Model, CharField, CASCADE, ForeignKey, Discipline)
 
 
 
@@ -24,4 +20,14 @@ class Direction(Model):
         return 'напр. '+self.name
 
 
+class Discipline(Model):
+    dis_name = CharField(max_length=10)
+    direction = ForeignKey(Direction,
+                         on_delete=CASCADE,
+                         related_name='discipline',
+                         )
+
+
+    def __str__(self):
+        return "discipline "+self.dis_name
 
