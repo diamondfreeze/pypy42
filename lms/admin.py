@@ -5,6 +5,7 @@ from lms.models import Discipline
 from lms.models import Group
 from lms.models import Student
 
+
 admin.site.register(Curator)
 admin.site.register(Direction)
 admin.site.register(Discipline)
