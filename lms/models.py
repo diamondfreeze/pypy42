@@ -50,7 +50,7 @@ class Group(Model):
 class Student(Model):
     surname = CharField(max_length = 10)
     group = ForeignKey(Group,
-                       on_delete = DO_NOTHING,
+                       on_delete = CASCADE,
                        related_name = 'student')
 
     def __str__(self):
