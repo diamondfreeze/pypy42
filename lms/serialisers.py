@@ -8,6 +8,9 @@ from lms.models import Direction
 
 class StudentSerializer(
     serializers.ModelSerializer
+
+class CuratorSerializer(
+    serializers.ModelSerializer
 ):
     class Meta:
         model = Student
