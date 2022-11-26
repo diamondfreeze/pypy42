@@ -11,6 +11,11 @@ class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+class CuratortViewSet(viewsets.ModelViewSet):
+    queryset = Curator.objects.all()
+    serializer_class = CuratorSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
 class CuratorViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = CuratorSerializer
