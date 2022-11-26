@@ -1,3 +1,8 @@
+from rest_framework import permissions
+
+from lms.models import Curator
+
+
 class IsOwnerOrReadOnly(permissions.BasePermission):
 
     def has_permission(self,request,view):
@@ -11,7 +16,7 @@ class IsCuratorOrReadOnly(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.metod in permissions.SAFE_METHODS:
             return True
-    qs = Curator.objects
-    qs = qs.filter(user = request.user)
-    qs = qs.exists()
-    return qs
+        qs = Curator.objects
+        qs = qs.filter(user = request.user)
+        qs = qs.exists()
+        return qs

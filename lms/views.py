@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from lms.models import Student
+from lms.models import Student, Curator
 from lms.serialisers import StudentSerializer
 from lms.serialisers import CuratorSerializer
 from lms.serialisers import GroupSerializer
